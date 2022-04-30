@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Router from 'next/router'
 
-const home = () => {
+const Home = () => {
     const [userName, setUserName] = useState(null)
     
     useEffect(() => {
@@ -15,4 +15,4 @@ const home = () => {
     )
 }
 
-export default home
+export default Home

@@ -27,7 +27,7 @@ export default function Home() {
       <div className="h-3/4 py-8 flex flex-col justify-evenly">
         <div>
           <h1 className="text-7xl">Definitely Another <br/> <span className="text-orange-400">Blog App</span></h1>
-          <p className="text-lg font-light pt-9">Blogs posted from this device are only saved here, other users on other device can't see it</p>
+          <p className="text-lg font-light pt-9">Blogs posted from this device are only saved here, other users on other device can&apos;t see it</p>
         </div>
         <form onSubmit={handleSubmit}>
           <input placeholder="What should we call you?" onChange={(e)=>{setName(e.target.value)}} type="text" className="bg-transparent w-full border-b text-6xl border-orange-900 focus:border-orange-400 mr-3 py-1 px-2 leading-tight focus:outline-none"/>
