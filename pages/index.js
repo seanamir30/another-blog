@@ -25,7 +25,6 @@ export default function Home() {
     <div className="h-screen flex items-center xl:px-96 md:px-10 px-3 align-center bg-slate-900 text-white">
       <div className="h-3/4 md:h-1/2 py-8 flex flex-col y-evenly">
         <div>
-          <button onClick={()=>{Router.push('/slides')}} className="bg-orange-400 rounded-md px-2 py-1 hover:bg-orange-600">Here&apos;s a slide or random images</button>
           <h1 className="text-7xl">Definitely Another <br/> <span className="text-orange-400">Blog App</span></h1>
           <p className="text-lg font-light pt-9">Blogs posted from this device are only saved here, other users on other device can&apos;t see it</p>
         </div>
