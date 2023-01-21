@@ -46,7 +46,7 @@ const NewPost = () => {
         <p className="font-bold mb-2">Create a post</p>
         <form onSubmit={handleSubmit}>
             <div className="w-full bg-slate-800 p-3 mb-2 rounded-md border-2 border-slate-700" >
-                <input placeholder="Title" className="w-full outline-none bg-slate-700 p-1 rounded-md border-2 border-slate-600 hover:border-slate-400" ref={postTitle} required/>
+                <input placeholder="Title *" className="w-full outline-none bg-slate-700 p-1 rounded-md border-2 border-slate-600 hover:border-slate-400" ref={postTitle} required/>
             </div>
             <div className="w-full bg-slate-800 p-3 rounded-md border-2 border-slate-700" >
                 <TextareaAutosize minRows={18} placeholder="Text (optional)" className="w-full h-96 outline-none bg-slate-700 p-1 rounded-md border-2 border-slate-600 hover:border-slate-400" ref={postBody}/>

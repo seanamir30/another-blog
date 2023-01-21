@@ -2,9 +2,11 @@ import { useEffect, useState } from 'react'
 import Router, { useRouter } from 'next/router';
 import Trash from '../../components/Trash';
 import Back from '../../components/Back';
+import Modal from '../../components/Modal';
 
 const View = () => {
     const [post, setPost] = useState()
+    const [isConfirmDeleteShown, setIsConfirmDeleteShown] = useState(false)
     const router = useRouter()
     const {id} = router.query
 
@@ -23,8 +25,12 @@ const View = () => {
             return object?.id === id;
         });
         delete posts[index]
-        localStorage.setItem("post", JSON.stringify(posts))
+        localStorage.setItem("post", JSON.stringify(posts.filter((post)=> post !== null)))
         Router.push("/home")
+    }
+
+    const closeModal = () => {
+        setIsConfirmDeleteShown(!isConfirmDeleteShown)
     }
 
   return (
@@ -46,7 +52,7 @@ const View = () => {
                         </span>
                         
                     </div>
-                        <Trash className="cursor-pointer" onClick={deletePost}/>
+                        <Trash className="cursor-pointer" onClick={()=>setIsConfirmDeleteShown(true)}/>
                     </div>
                     <div className="whitespace-pre-line">
                         {post.body}
@@ -54,6 +60,9 @@ const View = () => {
                 </div>
             </div>
         )}
+        {isConfirmDeleteShown &&
+            <Modal text="Are you sure you want to delete this post?" action={deletePost} closeModal={closeModal}/>
+        }
     </div>
   )
 }
