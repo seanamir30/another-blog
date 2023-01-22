@@ -1,7 +1,8 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState } from 'react'
 import Router from 'next/router'
 import Delete from '../components/Delete'
 import Modal from '../components/Modal'
+import clsx from 'clsx'
 
 const Home = () => {
     const [isConfirmDeleteShown , setIsConfirmDeleteShown] = useState(false)
@@ -26,7 +27,9 @@ const Home = () => {
     }
     console.log(posts)
     return (
-        <div className="xl:px-[30rem] md:px-24 px-2 py-7 xl:py-16 text-white">
+        <div className={clsx("xl:px-[30rem] md:px-24 px-2 py-7 xl:py-16 text-white relative", {
+            'overflow-hidden max-h-screen': isConfirmDeleteShown
+        })}>
             <header className="flex justify-between items-start">
                 <div className="text-xl font-extralight pb-7">Definitely a <span className="text-orange-400">blog</span> for <span className="text-orange-400 font-bold underline">{userName}</span></div>
                 <Delete onClick={handleConfirmDeleteModal}/>

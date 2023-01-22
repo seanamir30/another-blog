@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "clsx": "^1.2.1",
     "next": "12.1.5",
     "nuka-carousel": "^5.0.16",
     "react": "18.1.0",
