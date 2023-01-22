@@ -26,7 +26,6 @@ const NewPost = () => {
             time: new Date().toLocaleTimeString()
         }
         if (!userPosts?.length) {
-            console.log(userPosts)
             userPosts = [storedPost]
             localStorage.setItem("post",JSON.stringify(userPosts))
         } else {

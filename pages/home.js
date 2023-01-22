@@ -25,7 +25,7 @@ const Home = () => {
         localStorage.removeItem('post')
         Router.push('/')
     }
-    console.log(posts)
+
     return (
         <div className={clsx("xl:px-[30rem] md:px-24 px-2 py-7 xl:py-16 text-white relative", {
             'overflow-hidden max-h-screen': isConfirmDeleteShown
