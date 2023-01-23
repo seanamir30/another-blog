@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Router from 'next/router'
-import Delete from '../components/Delete'
+import RemoveUserIcon from '../public/icons/remove-user.svg'
 import Modal from '../components/Modal'
 import clsx from 'clsx'
 
@@ -27,12 +27,14 @@ const Home = () => {
     }
 
     return (
-        <div className={clsx("xl:px-[30rem] md:px-24 px-2 py-7 xl:py-16 text-white relative", {
+        <div className={clsx("xl:px-[30rem] md:px-24 px-2 py-7 xl:py-16 text-white relative min-h-screen", {
             'overflow-hidden max-h-screen': isConfirmDeleteShown
         })}>
             <header className="flex justify-between items-start">
                 <div className="text-xl font-extralight pb-7">Definitely a <span className="text-orange-400">blog</span> for <span className="text-orange-400 font-bold underline">{userName}</span></div>
-                <Delete onClick={handleConfirmDeleteModal}/>
+                <button className='w-6' onClick={handleConfirmDeleteModal}>
+                    <RemoveUserIcon className='fill-white h-full w-full'/>
+                </button>
             </header>
             <div className="w-full bg-slate-800 p-3 mb-5 rounded-md border-2 border-slate-700">
                 <input placeholder="Create Post" className="w-full outline-none bg-slate-700 p-1 rounded-md border-2 border-slate-600 hover:border-slate-400" onClick={()=>Router.push('/new-post')}/>

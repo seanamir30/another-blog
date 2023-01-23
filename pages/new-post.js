@@ -1,25 +1,19 @@
 import Router from 'next/router'
 import { useRef } from 'react'
 import TextareaAutosize from 'react-textarea-autosize'
+import generateUUID from '../utils/generateUUID'
 
 const NewPost = () => {
 
     const postTitle = useRef(null)
     const postBody = useRef(null)
-
-    function uuid() {
-        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-          var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-          return v.toString(16);
-        });
-    }
       
 
     const handleSubmit = (e) => {
         e.preventDefault()
         const userPosts = JSON.parse(localStorage.getItem("post"))
         const storedPost = {
-            id: uuid(),
+            id: generateUUID(),
             title: postTitle.current.value,
             body: postBody.current.value,
             date: new Date().toDateString(),

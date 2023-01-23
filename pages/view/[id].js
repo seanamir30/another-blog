@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import Router, { useRouter } from 'next/router';
-import Trash from '../../components/Trash';
-import Back from '../../components/Back';
+import Trash from '../../public/icons/trashcan.svg';
+import LeftArrow from '../../public/icons/left-arrow.svg';
 import Modal from '../../components/Modal';
 
 const View = () => {
@@ -35,7 +35,9 @@ const View = () => {
 
   return (
     <div className="xl:px-[30rem] md:px-24 px-2 py-7 xl:py-16 text-white">
-        <Back onClick={()=>Router.push('/home')}/>
+        <button className='w-8 text-white' onClick={()=>Router.push('/home')}>
+            <LeftArrow className='w-full h-full'/>
+        </button>
         {post && (
             <div className="">
                 <div className="bg-slate-800 w-full text-white border-2 border-slate-700 outline-none mt-3 p-3 rounded-md">
@@ -52,7 +54,9 @@ const View = () => {
                         </span>
                         
                     </div>
-                        <Trash className="cursor-pointer" onClick={()=>setIsConfirmDeleteShown(true)}/>
+                    <button className='h-6 text-white' onClick={()=>setIsConfirmDeleteShown(true)}>
+                        <Trash className="w-full h-full"/>
+                    </button>
                     </div>
                     <div className="whitespace-pre-line">
                         {post.body}
