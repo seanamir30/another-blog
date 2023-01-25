@@ -105,7 +105,7 @@ const Home = () => {
                 if (!post) return
                 return(
                     <div onClick={()=>Router.push(`/view/${post.id}`)} className="relative cursor-pointer max-h-56 bg-slate-800 w-full text-white border-2 border-slate-700 hover:border-slate-400 outline-none mt-3 p-3 rounded-md" key={post.id}>
-                        <div className="flex flex-col pb-2 overfloy-y-auto"><span className="text-xl capitalize">{post.title}</span><span className="italic font-extralight text-sm text-slate-400">{post.date}</span><span className="italic font-extralight text-sm text-slate-400">{post.time}</span></div>
+                        <div className="flex flex-col pb-2 overfloy-y-auto"><span className="text-xl">{post.title}</span><span className="italic font-extralight text-sm text-slate-400">{post.date}</span><span className="italic font-extralight text-sm text-slate-400">{post.time}</span></div>
                          <div className="max-h-24 overflow-hidden">{post.body}</div>
                          {post.body && <div className="bg-gradient-to-t from-slate-800 to-transparent absolute w-full h-20 bottom-0 left-0"></div>}
                     </div>
