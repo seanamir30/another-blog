@@ -15,6 +15,7 @@ export default function Home() {
     e.preventDefault()
     if (name){
       localStorage.setItem("name",name)
+      localStorage.setItem("post", '[]')
       Router.push("/home")
     } else{
       setError('empty')
