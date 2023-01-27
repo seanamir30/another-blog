@@ -43,7 +43,7 @@ const View = () => {
                 <div className="bg-slate-800 w-full text-white border-2 border-slate-700 outline-none mt-3 p-3 rounded-md">
                     <div className="flex justify-between">
                     <div className="flex flex-col pb-2 overfloy-y-auto">
-                        <span className="text-xl capitalize">
+                        <span className="text-xl capitalize break-words">
                             {post.title}
                         </span>
                         <span className="italic font-extralight text-sm text-slate-400">
