@@ -42,7 +42,7 @@ const View = () => {
             <div className="">
                 <div className="bg-slate-800 w-full text-white border-2 border-slate-700 outline-none mt-3 p-3 rounded-md">
                     <div className="flex justify-between">
-                    <div className="flex flex-col pb-2 overfloy-y-auto w-full">
+                    <div className="flex flex-col pb-2 overfloy-y-auto w-11/12">
                         <span className="text-xl capitalize break-words">
                             {post.title}
                         </span>
