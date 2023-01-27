@@ -65,7 +65,7 @@ const View = () => {
             </div>
         )}
         {isConfirmDeleteShown &&
-            <Modal text="Are you sure you want to delete this post?" action={deletePost} closeModal={closeModal}/>
+            <Modal type="delete" text="Are you sure you want to delete this post?" action={deletePost} closeModal={closeModal}/>
         }
     </div>
   )
