@@ -58,7 +58,7 @@ const View = () => {
                         <Trash className="w-full h-full"/>
                     </button>
                     </div>
-                    <div className="whitespace-pre-line">
+                    <div className="whitespace-pre-line break-words">
                         {post.body}
                     </div>
                 </div>
