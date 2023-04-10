@@ -5,6 +5,8 @@ import RemoveUserIcon from '../public/icons/remove-user.svg'
 import UploadIcon from '../public/icons/upload.svg'
 import Modal from '../components/Modal'
 import TooltipWrapper from '../components/TooltipWrapper'
+import AndroidIcon from '../public/icons/android.svg'
+import DownloadIcon from '../public/icons/download.svg'
 import clsx from 'clsx'
 
 const Home = () => {
@@ -72,6 +74,7 @@ const Home = () => {
     }
 
     return (
+        <>
         <div className={clsx("xl:px-[30rem] md:px-24 px-2 py-7 xl:py-16 text-white relative min-h-screen", {
             'overflow-hidden max-h-screen': isModalOpen
         })}>
@@ -118,6 +121,18 @@ const Home = () => {
             )}
             {isModalOpen && <Modal closeModal={handleModal} type={errorOnImport ? 'error' : 'delete'} text={errorOnImport ? errorOnImport : "Are you sure you want to delete your whole blog?"} action={deleteUser}/>}
         </div>
+        <div className="flex gap-2 sticky w-full bg-slate-700 text-white justify-center py-2 bottom-0 right-0">
+            <p>Try out the android app!</p>
+            <a href="https://firebasestorage.googleapis.com/v0/b/sean-portfolio-82686.appspot.com/o/another-blog-app.apk?alt=media&token=d47b24df-301e-44ca-8cca-3ff8985df70d" target="_blank" rel="noreferrer" className="flex bg-white hover:opacity-80 rounded-full items-center justify-center px-2 gap-2 z-10">
+                <div className="w-4 h-4 relative">
+                <AndroidIcon className="w-full h-full fill-[#32DE84]"/>
+                </div>
+                <div className='w-3 h-3 relative'>
+                <DownloadIcon className="w-full h-full"/>
+                </div>
+            </a>
+        </div>
+        </>
     )
 }
 
