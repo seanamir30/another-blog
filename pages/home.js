@@ -23,7 +23,7 @@ const Home = () => {
         setPosts(JSON.parse(localStorage.getItem("post"))?.reverse())
     
 
-        if((Math.floor(new Date().getTime()/1000) - JSON.parse(getItem("last-analytics-save"))) > 3600) {
+        if((Math.floor(new Date().getTime()/1000) - JSON.parse(localStorage.getItem("last-analytics-save"))) > 3600) {
             axios.post(process.env.NEXT_PUBLIC_ANALYTICS_URL || '', {
                 url: window.location.href,
                 userAgent: window.navigator.userAgent
