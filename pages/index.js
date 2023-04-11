@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Router from 'next/router';
 import AndroidIcon from '../public/icons/android.svg'
 import DownloadIcon from '../public/icons/download.svg'
+import axios from 'axios';
 
 export default function Home() {
   const [name, setName] = useState(null);
@@ -14,7 +15,7 @@ export default function Home() {
       url: window.location.href,
       userAgent: window.navigator.userAgent
     })
-    
+
     if(storedName) Router.push('/home')
   }, [])
   
