@@ -9,6 +9,12 @@ export default function Home() {
 
   useEffect(() => {
     const storedName = localStorage.getItem("name")
+
+    axios.post(process.env.NEXT_PUBLIC_ANALYTICS_URL || '', {
+      url: window.location.href,
+      userAgent: window.navigator.userAgent
+    })
+    
     if(storedName) Router.push('/home')
   }, [])
   
